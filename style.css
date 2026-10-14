@@ -242,17 +242,13 @@ img { max-width: 100%; display: block; }
   user-select: none;
   pointer-events: none;
 }
-
-/* PORT : plein, collé à gauche de la photo */
 .hero-word-left {
-  right: 60%;
+  right: 56%;
   color: var(--cream);
   text-align: right;
 }
-
-/* FOLIO : outline, collé à droite de la photo */ 
 .hero-word-right {
-  left: 58%;
+  left: 56%;
   color: transparent;
   -webkit-text-stroke: 2px var(--cream);
   text-align: left;
@@ -305,7 +301,6 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
   animation: bob 4s ease-in-out infinite;
 }
-
 .fw-1 { top: 22%; left: 5%;   animation-delay: 0s;   }
 .fw-2 { top: 62%; left: 8%;   animation-delay: -1s;  }
 .fw-3 { top: 32%; right: 6%;  animation-delay: -2s;  }
@@ -397,16 +392,118 @@ img { max-width: 100%; display: block; }
   transform: translateY(-2px);
 }
 
-/* Responsive hero */
+/* ============ RESPONSIVE HERO ============ */
 @media (max-width: 900px) {
-  .hero-topbar { top: 5.5rem; padding: 0 1.5rem; }
-  .hero-word { font-size: clamp(3rem, 17vw, 7rem); }
-  .hero-word-right { -webkit-text-stroke: 1.5px var(--cream); }
-  .hero-photo { height: 62vh; }
-  .hero-bottom { left: 1.5rem; bottom: 6rem; max-width: 80%; }
-  .hero-bottom-right { display: none; }
-  .floating-words { display: none; }
-  .hero-orb { display: none; }
+  .hero {
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .hero-topbar {
+    top: 5.5rem;
+    padding: 0 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  /* PORT / FOLIO : plus petits et bien placés */
+  .hero-word {
+    font-size: clamp(2.5rem, 14vw, 4.5rem);
+    letter-spacing: -0.03em;
+  }
+  .hero-word-left  { right: 52%; }
+  .hero-word-right { left: 52%; -webkit-text-stroke: 1.2px var(--cream); }
+
+  /* Photo centrée, plus petite */
+  .hero-photo {
+    height: 62vh;
+    max-height: none;
+  }
+
+  /* Nom en haut de la photo, centré */
+  .hero-bottom {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    top: 55%;
+    text-align: center;
+    max-width: 90%;
+    width: 90%;
+  }
+  .hero-name {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    margin-bottom: 0.4rem;
+  }
+  .hero-role {
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  }
+
+  /* Bouton CV : centré en bas */
+  .hero-bottom-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    bottom: 1.5rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+  .hero-link { display: none; }
+  .hero-cv-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  /* ============ MOTS FLOTTANTS sur mobile ============ */
+  .floating-words {
+    display: block;
+  }
+  .fword {
+    font-size: 0.55rem;
+    padding: 0.25rem 0.6rem;
+    letter-spacing: 0.5px;
+    border-width: 1px;
+  }
+
+  /* On ne garde que 5 mots sur mobile, mieux placés */
+  .fw-1 { top: 18%; left: 4%;  }
+  .fw-2 { top: 60%; left: 5%;  }
+  .fw-3 { top: 28%; right: 4%; }
+  .fw-4 { display: none; }
+  .fw-5 { bottom: 20%; left: 6%; }
+  .fw-6 { display: none; }
+  .fw-7 { top: 12%; right: 18%; }
+  .fw-8 { display: none; }
+
+  /* ============ ORBES sur mobile ============ */
+  .hero-orb {
+    display: block;
+    opacity: 0.6;
+  }
+  .orb-1 {
+    width: 60px;
+    height: 60px;
+    top: 30%;
+    left: 4%;
+  }
+  .orb-2 {
+    width: 35px;
+    height: 35px;
+    bottom: 30%;
+    right: 5%;
+  }
+  .orb-3 {
+    width: 100px;
+    height: 100px;
+    top: 65%;
+    right: -20px;
+    opacity: 0.35;
+  }
+
+  /* Formes floues en fond : plus discrètes */
+  .shape { opacity: 0.15; }
 }
 
 /* ============ BOUTONS ============ */
