@@ -728,7 +728,9 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   flex-wrap: wrap;
 }
-.section-contact .btn-primary { background: var(--bordo); color: var(--cream); }
+.section-contact .btn-primary { background: var(--bordo); color: var(--cream);text-align: center;
+  padding-bottom: 4rem; 
+ }
 .section-contact .btn-primary::before { background: var(--cream); }
 .section-contact .btn-primary:hover { color: var(--bordo); }
 
