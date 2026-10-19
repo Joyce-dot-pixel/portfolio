@@ -698,7 +698,7 @@ img { max-width: 100%; display: block; }
 .skill-category.animate .skill-bar div { width: var(--w); }
 
 /* ============ CONTACT ============ */
-.section-contact { background: var(--green); color: var(--cream); text-align: center; }
+.section-contact { background: var(--green); color: var(--cream); text-align: center;  padding-bottom: 4rem;  }
 .section-contact .section-tag { color: var(--cream); opacity: 0.8; }
 .section-contact .section-title { color: var(--cream); }
 .section-contact .section-title .accent { color: var(--cream-light); opacity: 0.85; }
@@ -728,9 +728,7 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   flex-wrap: wrap;
 }
-.section-contact .btn-primary { background: var(--bordo); color: var(--cream);text-align: center;
-  padding-bottom: 4rem; 
- }
+.section-contact .btn-primary { background: var(--bordo); color: var(--cream);text-align: center;}
 .section-contact .btn-primary::before { background: var(--cream); }
 .section-contact .btn-primary:hover { color: var(--bordo); }
 
