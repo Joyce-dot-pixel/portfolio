@@ -80,7 +80,7 @@ document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(
 
 /* ============ EFFET TEXTE TAPÉ ============ */
 const titles = [
-  'Développeur Back-End',
+  'Développement Back-End',
   'Ingénierie Logicielle',
   'Modélisation UML',
   'Django & PostgreSQL'
@@ -109,3 +109,22 @@ function typeEffect() {
   setTimeout(typeEffect, deleting ? 40 : 90);
 }
 typeEffect();
+
+/* ============ CARROUSEL AUTOMATIQUE ============ */
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll('.carousel-img');
+  if (images.length > 0) {
+    let currentIndex = 0;
+    
+    setInterval(() => {
+      // On retire la classe 'active' de l'image actuelle
+      images[currentIndex].classList.remove('active');
+      
+      // On passe à l'image suivante (et on recommence à 0 à la fin)
+      currentIndex = (currentIndex + 1) % images.length;
+      
+      // On ajoute la classe 'active' à la nouvelle image
+      images[currentIndex].classList.add('active');
+    }, 3000); // 3000 millisecondes = 3 secondes
+  }
+});

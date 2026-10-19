@@ -740,3 +740,37 @@ img { max-width: 100%; display: block; }
 /* ============ ANIMATIONS REVEAL ============ */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s var(--transition), transform 0.9s var(--transition); }
 .reveal.active { opacity: 1; transform: translateY(0); }
+
+/* ============ CARROUSEL DE CAPTURES ============ */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Tu peux ajuster la hauteur selon tes images */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(15, 61, 58, 0.25);
+  border: 4px solid var(--green);
+  background: var(--green); /* Fond au cas où l'image met du temps à charger */
+}
+
+.carousel-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'image remplit le cadre sans se déformer */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+
+/* Sur mobile, on réduit un peu la hauteur pour que ça rentre */
+@media (max-width: 900px) {
+  .carousel {
+    height: 250px;
+  }
+}
